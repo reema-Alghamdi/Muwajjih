@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مسارات الطلاب وذوي الهمم – منصة التوظيف الذكي</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>مسارات الطلاب وذوي الهمم</h1>
+    <p>صفحة تجريبية لتوضيح توصيات المسارات الدراسية والوظائف الملائمة</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>للطلاب</h2>
+      <p>اطّلع على المهارات المستقبلية المطلوبة بحسب اتجاهات سوق العمل.</p>
+      <button id="fetchInsights">جلب التوقعات</button>
+      <div id="skillsBox" style="margin-top:8px;"></div>
+      <div class="card" style="margin-top:8px;">
+        <h3>اقتراح مسارات دراسية (أمثلة)</h3>
+        <ul>
+          <li>علوم البيانات وتحليلها (مع أساسيات السحابة)</li>
+          <li>الأمن السيبراني – الوعي والتطبيقات</li>
+          <li>تطوير الواجهات (HTML/CSS/JS/React)</li>
+        </ul>
+        <small>يمكن ربط الصفحة لاحقًا ببيانات حقيقية ودورات منصات (Coursera / رواق).</small>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>لذوي الهمم</h2>
+      <p>توصيات وظائف ملائمة وفق القدرات والاحتياجات. (نموذج تجريبي)</p>
+      <ul>
+        <li>تحليل بيانات عن بُعد (حسب التيسيرات المناسبة)</li>
+        <li>دعم فني عبر الدردشة / المراسلة</li>
+        <li>أعمال مراجعة محتوى / إدخال بيانات</li>
+      </ul>
+      <small>سيتم لاحقًا توسيع هذه القائمة وربطها بمرشّحات للوصول والتيسير.</small>
+    </section>
+  </main>
+
+  <footer>
+    <small>نسخة تجريبية – يمكن ربطها لاحقًا بمحرّك توصية فعلي.</small>
+  </footer>
+
+  <script>
+    const API = 'http://127.0.0.1:5001';
+    document.getElementById('fetchInsights').addEventListener('click', async () => {
+      try {
+        const res = await fetch(`${API}/api/insights`);
+        const data = await res.json();
+        const box = document.getElementById('skillsBox');
+        if (data.future_skills && Array.isArray(data.future_skills)) {
+          box.innerHTML = '<b>مهارات مستقبلية مقترحة:</b><ul>' + data.future_skills.map(s => `<li>${s}</li>`).join('') + '</ul>';
+        } else {
+          box.textContent = 'لا توجد بيانات مهارات متاحة حاليًا.';
+        }
+      } catch (e) {
+        document.getElementById('skillsBox').textContent = 'تعذّر الجلب. تأكّد من تشغيل الـ API.';
+      }
+    });
+  </script>
+</body>
+</html>
