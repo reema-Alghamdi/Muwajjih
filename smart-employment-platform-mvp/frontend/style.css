@@ -1,0 +1,13 @@
+
+* { box-sizing: border-box; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+body { margin: 0; background: #f6f7fb; color: #0f172a; }
+header { padding: 24px; background: white; border-bottom: 1px solid #e5e7eb; }
+h1 { margin: 0 0 8px; }
+main { max-width: 1000px; margin: 24px auto; padding: 0 16px; display: grid; gap: 16px; }
+.card { background: white; padding: 16px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+textarea { width: 100%; min-height: 140px; padding: 12px; border: 1px solid #e5e7eb; border-radius: 8px; }
+button { margin-top: 8px; padding: 10px 14px; border: 0; border-radius: 8px; background: #2563eb; color: white; cursor: pointer; }
+button:hover { opacity: .95; }
+input { width: 100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 8px; }
+#cvResult, #jobsResult { margin-top: 8px; }
+pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 8px; overflow: auto; }

@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "title": "Data Analyst",
+    "city": "Riyadh",
+    "skills": [
+      "SQL",
+      "Excel",
+      "Python"
+    ],
+    "sector": "Tech"
+  },
+  {
+    "id": 2,
+    "title": "HR Specialist",
+    "city": "Jeddah",
+    "skills": [
+      "Communication",
+      "ATS",
+      "Excel"
+    ],
+    "sector": "HR"
+  },
+  {
+    "id": 3,
+    "title": "Frontend Developer",
+    "city": "Khobar",
+    "skills": [
+      "JavaScript",
+      "React",
+      "HTML",
+      "CSS"
+    ],
+    "sector": "Tech"
+  }
+]

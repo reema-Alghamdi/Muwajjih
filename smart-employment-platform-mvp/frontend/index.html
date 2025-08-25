@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>نظام التوظيف الذكي - MVP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>نظام التوظيف الذكي</h1>
+    <p>منصة مبدئية لعرض الفكرة خلال الهاكاثون</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>اختبر سيرتك الذاتية (ATS)</h2>
+      <textarea id="cvText" placeholder="الصق نص السيرة الذاتية هنا"></textarea>
+      <button id="scoreBtn">احسب التقييم</button>
+      <div id="cvResult"></div>
+    </section>
+
+    <section class="card">
+      <h2>توصيات وظائف</h2>
+      <input id="skillsInput" placeholder="أدخل مهاراتك مفصولة بفواصل: Python, Excel, React" />
+      <button id="recBtn">اعرض التوصيات</button>
+      <div id="jobsResult"></div>
+    </section>
+
+    <section class="card">
+      <h2>لوحة مؤشرات (Mock Insights)</h2>
+      <button id="insightsBtn">جلب المؤشرات</button>
+      <pre id="insights"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <small>نسخة تجريبية للعرض. API على المنفذ 5001</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
